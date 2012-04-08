@@ -74,12 +74,15 @@
 
 		<event type="post-insert">
 			<listener class="org.hibernate.envers.event.AuditEventListener" />
+			            <listener class="fi.hut.soberit.agilefant.db.hibernate.notification.NotificationEventListener" />
 		</event>
 		<event type="post-update">
 			<listener class="org.hibernate.envers.event.AuditEventListener" />
+			<listener class="fi.hut.soberit.agilefant.db.hibernate.notification.NotificationEventListener" />
 		</event>
 		<event type="post-delete">
 			<listener class="org.hibernate.envers.event.AuditEventListener" />
+			<listener class="fi.hut.soberit.agilefant.db.hibernate.notification.NotificationEventListener" />
 		</event>
 		<event type="pre-collection-update">
 			<listener class="org.hibernate.envers.event.AuditEventListener" />
