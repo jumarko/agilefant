@@ -46,6 +46,8 @@ public class NotificationEmailSender implements NotificationBusiness {
     private SimpleMailMessage deleteTaskTemplate;
 
     private String agilefantUrl;
+    /** Global turn on/off for all notifications */
+    private boolean notificationsEnabled = false;
 
     /**
      * Checks whether specified {@code notificationEvent} actually represents valid notification event.
@@ -54,6 +56,9 @@ public class NotificationEmailSender implements NotificationBusiness {
      */
     @Override
     public boolean isNotificationEvent(NotificationEvent notificationEvent) {
+        if (!notificationsEnabled) {
+            return false;
+        }
         Validate.notNull(notificationEvent, "notificationEvent cannot be null");
         if (CollectionUtils.isEmpty(notificationsConfiguration)) {
             return false;
@@ -146,6 +151,10 @@ public class NotificationEmailSender implements NotificationBusiness {
 
     public void setAgilefantUrl(String agilefantUrl) {
         this.agilefantUrl = agilefantUrl;
+    }
+
+    public void setNotificationsEnabled(boolean notificationsEnabled) {
+        this.notificationsEnabled = notificationsEnabled;
     }
 
     //--------------------------------------------------- HELPER METHODS -----------------------------------------------

@@ -3,10 +3,7 @@
  */
 package fi.hut.soberit.agilefant.core;
 
-import fi.hut.soberit.agilefant.business.NotificationBusiness;
-import fi.hut.soberit.agilefant.business.impl.NotificationEmailSender;
 import fi.hut.soberit.agilefant.model.notification.NotificationConfiguration;
-import fi.hut.soberit.agilefant.test.MockContextLoader;
 import java.util.List;
 import javax.annotation.Resource;
 import static org.junit.Assert.assertNotNull;

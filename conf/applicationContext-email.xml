@@ -36,6 +36,8 @@
         <!--This is a workaround how to inject string property into the beans in Spring 2.5.x-->
         <!--In Spring 3 you can directly use @Value annotation-->
         <property name="agilefantUrl" value="${agilefant.url}" />
+        <property name="notificationsEnabled" value="${notifications.enabled}" />
+
         <!--all other properties are injected via annotations-->
     </bean>
 
